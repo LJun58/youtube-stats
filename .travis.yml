@@ -1,0 +1,9 @@
+language: node_js
+services:
+  - docker
+
+before_install:
+  - docker build -t Practical8/reactapp -f Dockerfile.dev .
+
+script:
+  - docker run Practical8/reactapp npm run test -- --coverage
